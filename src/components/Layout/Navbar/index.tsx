@@ -2,12 +2,13 @@ import React from 'react';
 import { logout, useGetAccountInfo } from '@elrondnetwork/dapp-core';
 import { Navbar as BsNavbar, NavItem, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { dAppName } from 'config';
 import { routeNames } from 'routes';
-import { ReactComponent as ElrondLogo } from './../../../assets/img/elrond.svg';
+import Navlist from './Navlist';
+// import { ReactComponent as ElrondLogo } from './../../../assets/img/elrond.svg';
 
 const Navbar = () => {
   const { address } = useGetAccountInfo();
+  console.log('address', address);
 
   const handleLogout = () => {
     logout(`${window.location.origin}/unlock`);
@@ -22,17 +23,14 @@ const Navbar = () => {
           className='d-flex align-items-center navbar-brand mr-0'
           to={isLoggedIn ? routeNames.dashboard : routeNames.home}
         >
-          <ElrondLogo className='elrond-logo' />
-          <span className='dapp-name text-muted'>{dAppName}</span>
+          <h3>Crypto Cavemen</h3>
         </Link>
 
-        <Nav className='ml-auto'>
-          {isLoggedIn && (
-            <NavItem>
-              <button className='btn btn-link' onClick={handleLogout}>
-                Close
-              </button>
-            </NavItem>
+        <Nav className='header'>
+          {isLoggedIn ? (
+            <Navlist />
+          ) : (
+            <Navlist address={address} logout={handleLogout} />
           )}
         </Nav>
       </div>
