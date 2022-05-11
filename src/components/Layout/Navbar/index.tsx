@@ -27,11 +27,7 @@ const Navbar = () => {
         </Link>
 
         <Nav className='header'>
-          {isLoggedIn ? (
-            <Navlist />
-          ) : (
-            <Navlist address={address} logout={handleLogout} />
-          )}
+          {<Navlist address={address} logout={handleLogout} />}
         </Nav>
       </div>
     </BsNavbar>
