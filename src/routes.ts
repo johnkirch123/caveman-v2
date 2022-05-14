@@ -1,8 +1,8 @@
 import withPageTitle from './components/PageTitle';
+import Cavemen from './pages/Cavemen';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
 import Transaction from './pages/Transaction';
-import Cavemen from './pages/Cavemen';
 
 export const routeNames = {
   home: '/',
@@ -15,6 +15,11 @@ export const routeNames = {
 };
 
 const routes: Array<any> = [
+  {
+    path: routeNames.cavemen,
+    title: 'Cavemen',
+    component: Cavemen
+  },
   {
     path: routeNames.home,
     title: 'Home',
@@ -30,11 +35,6 @@ const routes: Array<any> = [
     path: routeNames.transaction,
     title: 'Transaction',
     component: Transaction
-  },
-  {
-    path: routeNames.cavemen,
-    title: 'Cavemen',
-    component: Cavemen
   }
 ];
 

@@ -1,5 +1,93 @@
 .home {
-  background-color: #333;
   color: white;
   height: 110vh;
+}
+
+.landing {
+  // background: linear-gradient(to right bottom,
+  //     rgba(3, 55, 200, 0.4),
+  //     rgba(0, 0, 0, 0.75)),
+  //   url(../img/crypto-cavemen-banner-lines.png) repeat center fixed;
+
+  grid-column: 1 / -1;
+  grid-row: 1 / 3;
+  max-width: 190rem;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: auto 100%;
+  position: relative;
+
+  &__info {
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    max-width: 35%;
+    min-width: 20rem;
+
+    @media (max-width: 1200px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      position: absolute;
+      top: 50%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      width: 75vw;
+    }
+  }
+
+  &__header {
+    background: linear-gradient(to right bottom, #fdf11e, #ac8d04);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__link:link,
+  &__link:visited {
+    margin-top: 3rem;
+    display: inline-block;
+    border: none;
+    background: linear-gradient(to right bottom, #fdf11e, #ac8d04);
+    padding: 1.5rem 3rem;
+    font-family: chinese-rocks, sans-serif;
+    color: white;
+    font-size: 1.9rem;
+    cursor: pointer;
+  }
+
+  &__link:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  &__link:active {
+    transform: translateY(3px);
+  }
+}
+
+.cta__btn {
+  margin-top: 5rem;
+}
+
+.cta__link:link,
+.cta__link:visited {
+  display: inline-block;
+  border: none;
+  background: linear-gradient(to right bottom, #fdf11e, #ac8d04);
+  padding: 1.5rem 3rem;
+  font-family: chinese-rocks, sans-serif;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.9rem;
+  cursor: pointer;
+}
+
+.cta__link:hover {
+  cursor: pointer;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { DappUI, useGetLoginInfo } from '@elrondnetwork/dapp-core';
 import { routeNames } from 'routes';
+import background from '../../img/crypto-cavemen-banner-lines.png';
 
 export const UnlockRoute: () => JSX.Element = () => {
   const {
@@ -18,7 +19,15 @@ export const UnlockRoute: () => JSX.Element = () => {
   }, [isLoggedIn]);
 
   return (
-    <div className='home d-flex flex-fill align-items-center'>
+    <div
+      className='d-flex flex-fill align-items-center'
+      style={{
+        backgroundImage: `linear-gradient(to right bottom,
+      rgba(3, 55, 200, 0.4),
+      rgba(0, 0, 0, 0.75)),
+    url(${background})`
+      }}
+    >
       <div className='m-auto' data-testid='unlockPage'>
         <div className='card my-4 text-center'>
           <div className='card-body py-4 px-2 px-sm-2 mx-lg-4'>
