@@ -1,5 +1,4 @@
 import React from 'react';
-import './navlist.css';
 
 interface IProps {
   address: string;
@@ -10,34 +9,34 @@ const Navlist: React.FC<IProps> = ({ address, logout }) => {
   const isLoggedIn = Boolean(address);
 
   return (
-    <ul className='header__nav'>
-      <li className='header__nav--list'>
-        <a href='#' className='header__nav--link'>
+    <ul className='nav__list'>
+      <li className='nav__item'>
+        <a href='#' className='nav__link'>
           Dashboard
         </a>
       </li>
-      <li className='header__nav--list'>
-        <a href='/cavemen' className='header__nav--link'>
+      <li className='nav__item'>
+        <a href='/cavemen' className='nav__link'>
           Cavemen
         </a>
       </li>
-      <li className='header__nav--list'>
-        <a href='#' className='header__nav--link'>
+      <li className='nav__item'>
+        <a href='#' className='nav__link'>
           About
         </a>
       </li>
-      <li className='header__nav--list'>
-        <a href='#' className='header__nav--link'>
+      <li className='nav__item'>
+        <a href='#' className='nav__link'>
           Roadmap
         </a>
       </li>
-      <li className='header__nav--list'>
+      <li className='nav__item'>
         {isLoggedIn ? (
-          <a href='/' className='header__nav--link' onClick={logout}>
+          <a href='/' className='nav__link' onClick={logout}>
             Logout
           </a>
         ) : (
-          <a href='/unlock' className='header__nav--link'>
+          <a href='/unlock' className='nav__link'>
             Connect
           </a>
         )}

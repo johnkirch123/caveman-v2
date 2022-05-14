@@ -1,0 +1,94 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 190rem;
+  position: fixed;
+  z-index: 100;
+}
+
+.logo__box {
+  margin: 1.5rem 3rem;
+  z-index: 1000;
+}
+.logo__image {
+  height: 6rem;
+  width: 14rem;
+}
+.logo__link {
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  margin-left: auto;
+}
+@media (max-width: 1200px) {
+  .nav {
+    display: none;
+  }
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+}
+.nav__link:link, .nav__link:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.6rem;
+  display: block;
+  height: 100%;
+  padding: 3rem 4rem;
+  transition: all 0.2s;
+  background-image: linear-gradient(to right, #FDF11E, #DEB700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.nav__link:hover, .nav__link:active {
+  cursor: pointer;
+  font-size: 2rem;
+  transform: translateY(3px);
+}
+.nav__presale {
+  animation: pulsate 2s infinite;
+}
+.nav__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.home {
+  background-color: #333;
+  color: white;
+  height: 110vh;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

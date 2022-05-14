@@ -4,6 +4,8 @@ import { Navbar as BsNavbar, NavItem, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { routeNames } from 'routes';
 import Navlist from './Navlist';
+import logo from '../../../img/logo.png';
+import bolt from '../../../img/elrond-bolt.png';
 // import { ReactComponent as ElrondLogo } from './../../../assets/img/elrond.svg';
 
 const Navbar = () => {
@@ -17,19 +19,21 @@ const Navbar = () => {
   const isLoggedIn = Boolean(address);
 
   return (
-    <BsNavbar className='bg-white border-bottom px-4 py-3'>
-      <div className='container-fluid'>
+    <BsNavbar className='header'>
+                  <div className="logo__box">
+                <Link to="#" className="logo__link"><img src={logo} alt="logo" className="logo__image" /></Link>
+            </div>
+            <nav className="nav">
+        <Navlist address={address} logout={handleLogout} />
+                
+            </nav>
         <Link
-          className='d-flex align-items-center navbar-brand mr-0'
+          className='header__logo--link'
           to={isLoggedIn ? routeNames.dashboard : routeNames.home}
         >
-          <h3>Crypto Cavemen</h3>
+          <h3 className='header__logo--text'>Crypto Cavemen</h3>
         </Link>
-
-        <Nav className='header'>
-          {<Navlist address={address} logout={handleLogout} />}
-        </Nav>
-      </div>
+           
     </BsNavbar>
   );
 };

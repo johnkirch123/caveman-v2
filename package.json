@@ -17,6 +17,7 @@
     "react-dom": "17.0.2",
     "react-router-dom": "6.2.1",
     "react-scripts": "4.0.3",
+    "sass": "^1.51.0",
     "typescript": "4.1.2",
     "web-vitals": "1.0.1"
   },
@@ -31,7 +32,9 @@
     "copy-testnet-config": "cp ./src/config.testnet.tsx ./src/config.tsx",
     "copy-devnet-config": "cp ./src/config.devnet.tsx ./src/config.tsx",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext js,ts,tsx src"
+    "lint": "eslint --ext js,ts,tsx src",
+    "watch:sass": "sass -w ./src/sass/main.scss ./src/css/style.css",
+    "css:build": "sass ./src/sass/main.scss ./src/css/style.css"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +65,7 @@
     "@types/react-router-dom": "5.1.7",
     "@typescript-eslint/eslint-plugin": "4.22.1",
     "@typescript-eslint/parser": "4.22.1",
+    "concurrently": "^7.1.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-config-react": "1.1.7",
     "eslint-config-react-app": "6.0.0",
@@ -74,7 +78,6 @@
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
-    "node-sass": "6.0.1",
     "prettier": "2.3.2"
   }
 }
