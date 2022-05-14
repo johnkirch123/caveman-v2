@@ -20,9 +20,15 @@
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+.footer__box {
+  transform: translateX(-50%);
+}
+.footer__link {
   color: white;
-  text-align: center;
 }
 
 .header {
@@ -87,7 +93,7 @@
 }
 
 .dashboard {
-  height: 95vh;
+  height: 100vh;
   background-color: #333;
   color: white;
   text-align: center;
@@ -96,7 +102,7 @@
 
 .home {
   color: white;
-  height: 110vh;
+  height: 100vh;
 }
 
 .landing {
@@ -167,13 +173,15 @@
 
 .roadmap {
   width: 100vw;
+  background-color: #111;
+  height: 100vh;
 }
 .roadmap__image {
   width: 100%;
 }
 
 .about {
-  height: 95vh;
+  height: 100vh;
   background-color: #333;
   color: white;
   text-align: center;
@@ -181,7 +189,7 @@
 }
 
 .cavemen {
-  height: 95vh;
+  height: 100vh;
   background-color: #333;
   color: white;
   text-align: center;

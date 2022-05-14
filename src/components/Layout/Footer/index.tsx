@@ -3,13 +3,13 @@ import { ReactComponent as HeartIcon } from '../../../assets/img/heart.svg';
 
 const Footer = () => {
   return (
-    <footer className='footer text-center mt-2 mb-3'>
-      <div>
+    <footer className='footer'>
+      <div className='footer__box'>
         <a
           {...{
             target: '_blank'
           }}
-          className='d-flex align-items-center'
+          className='footer__link'
           href='https://elrond.com/'
         >
           Made with <HeartIcon className='mx-1' /> by Elrond Network.

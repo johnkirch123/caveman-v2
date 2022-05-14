@@ -22,7 +22,15 @@
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
-  color: white;
-  text-align: center;
+  left: 50%;
+  width: 100%;
+  padding: 0.5rem 0;
+
+  &__box {
+    transform: translateX(-50%);
+  }
+  
+  &__link {
+    color: white;
+  }
 }
