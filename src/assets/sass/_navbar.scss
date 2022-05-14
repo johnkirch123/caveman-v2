@@ -17,6 +17,12 @@
     &__image {
         height: 7rem;
         width: 14rem;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            height: 7.1rem;
+            width: 14.2rem;
+        }
     }
 
     &__link {

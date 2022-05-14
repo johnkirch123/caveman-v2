@@ -47,6 +47,11 @@
 .logo__image {
   height: 7rem;
   width: 14rem;
+  transition: all 0.2s ease-in-out;
+}
+.logo__image:hover {
+  height: 7.1rem;
+  width: 14.2rem;
 }
 .logo__link {
   width: 100%;
