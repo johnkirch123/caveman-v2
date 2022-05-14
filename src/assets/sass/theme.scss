@@ -3,7 +3,7 @@
 
   $body: #000;
   $headings-font-weight: 300 !important;
-$primary: #1b46c2;
+$primary: #e7eb24;
   $light: #fafafa;
 
   $headings-font-weight: 300 !important;
@@ -54,20 +54,6 @@ html {
     width: 80px;
     height: 80px;
   }
-}
-
-/* Navbar
--------------------------------------------------- */
-.elrond-logo {
-  width: 85px;
-  height: 25px;
-}
-
-.dapp-name {
-  line-height: 1;
-  border-left: 1px solid $gray-400;
-  padding-left: 3px;
-  margin-left: 4px;
 }
 
 /* Dashboard

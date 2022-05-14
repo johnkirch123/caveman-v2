@@ -20,7 +20,7 @@ export const UnlockRoute: () => JSX.Element = () => {
 
   return (
     <div
-      className='d-flex flex-fill align-items-center'
+      className='d-flex flex-fill align-items-center unlock'
       style={{
         backgroundImage: `linear-gradient(to right bottom,
       rgba(3, 55, 200, 0.4),

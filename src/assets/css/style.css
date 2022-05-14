@@ -4,6 +4,27 @@
   margin: 0;
 }
 
+.button {
+  font-size: 1.8rem;
+  position: relative;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(167, 146, 13);
+  padding: 1rem 2rem;
+  transition: color 0.3s cubic-bezier(1, 0, 0, 1);
+}
+.button:hover {
+  text-decoration: none;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -60,8 +81,17 @@
 
 .unlock {
   color: black;
-  font-size: 20rem;
-  background-color: red;
+  height: 100vh;
+  font-size: 1.5rem;
+  background: linear-gradient(rgb(105, 9, 89), rgb(173, 163, 11));
+}
+
+.dashboard {
+  height: 95vh;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding-top: 40vh;
 }
 
 .home {
@@ -79,35 +109,21 @@
   position: relative;
 }
 .landing__info {
-  position: absolute;
-  top: 35%;
-  left: 60%;
+  margin-left: 50%;
+  padding-top: 25vh;
   max-width: 35%;
   min-width: 20rem;
 }
-@media (max-width: 1200px) {
-  .landing__info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
-  }
-}
-@media (max-width: 600px) {
-  .landing__info {
-    position: absolute;
-    top: 50%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-    width: 75vw;
-  }
-}
 .landing__header {
-  background: linear-gradient(to right bottom, #fdf11e, #ac8d04);
+  background: linear-gradient(to right bottom, #fdf11e, #dfb706);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-size: 5rem;
+  font-weight: 600;
+}
+.landing__text {
+  padding: 3rem 0;
 }
 .landing__link:link, .landing__link:visited {
   margin-top: 3rem;
@@ -147,6 +163,29 @@
 
 .cta__link:hover {
   cursor: pointer;
+}
+
+.roadmap {
+  width: 100vw;
+}
+.roadmap__image {
+  width: 100%;
+}
+
+.about {
+  height: 95vh;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+.cavemen {
+  height: 95vh;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding-top: 40vh;
 }
 
 @keyframes pulsate {

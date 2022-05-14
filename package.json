@@ -33,8 +33,7 @@
     "copy-devnet-config": "cp ./src/config.devnet.tsx ./src/config.tsx",
     "eject": "react-scripts eject",
     "lint": "eslint --ext js,ts,tsx src",
-    "watch:sass": "sass -w ./src/sass/main.scss ./src/css/style.css",
-    "css:build": "sass ./src/sass/main.scss ./src/css/style.css"
+    "watch:sass": "sass -w ./src/assets/sass/main.scss ./src/assets/css/style.css"
   },
   "eslintConfig": {
     "extends": [

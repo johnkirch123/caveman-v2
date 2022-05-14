@@ -8,9 +8,9 @@ import Navbar from './Navbar';
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { search } = useLocation();
   return (
-    <div className='bg-light d-flex flex-column flex-fill wrapper'>
+    <>
       <Navbar />
-      <main className='d-flex flex-column flex-grow-1'>
+      <main className='main'>
         <AuthenticatedRoutesWrapper
           routes={routes}
           unlockRoute={`${routeNames.unlock}${search}`}
@@ -19,7 +19,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </AuthenticatedRoutesWrapper>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -11,9 +11,11 @@ const Navlist: React.FC<IProps> = ({ address, logout }) => {
   return (
     <ul className='nav__list'>
       <li className='nav__item'>
-        <a href='#' className='nav__link'>
-          Dashboard
-        </a>
+        {isLoggedIn && (
+          <a href='/dashboard' className='nav__link'>
+            Dashboard
+          </a>
+        )}
       </li>
       <li className='nav__item'>
         <a href='/cavemen' className='nav__link'>
@@ -21,12 +23,12 @@ const Navlist: React.FC<IProps> = ({ address, logout }) => {
         </a>
       </li>
       <li className='nav__item'>
-        <a href='#' className='nav__link'>
+        <a href='/about' className='nav__link'>
           About
         </a>
       </li>
       <li className='nav__item'>
-        <a href='#' className='nav__link'>
+        <a href='/roadmap' className='nav__link'>
           Roadmap
         </a>
       </li>

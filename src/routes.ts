@@ -1,3 +1,5 @@
+import About from 'pages/About/About';
+import Roadmap from 'pages/Roadmap';
 import withPageTitle from './components/PageTitle';
 import Cavemen from './pages/Cavemen';
 import Dashboard from './pages/Dashboard';
@@ -9,6 +11,8 @@ export const routeNames = {
   dashboard: '/dashboard',
   transaction: '/transaction',
   cavemen: '/cavemen',
+  roadmap: '/roadmap',
+  about: '/about',
   unlock: '/unlock',
   ledger: '/ledger',
   walletconnect: '/walletconnect'
@@ -30,6 +34,16 @@ const routes: Array<any> = [
     title: 'Dashboard',
     component: Dashboard,
     authenticatedRoute: true
+  },
+  {
+    path: routeNames.roadmap,
+    title: 'Roadmap',
+    component: Roadmap
+  },
+  {
+    path: routeNames.about,
+    title: 'About',
+    component: About
   },
   {
     path: routeNames.transaction,

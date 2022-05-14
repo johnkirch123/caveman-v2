@@ -1,5 +1,8 @@
 import * as React from 'react';
-import background from '../../img/crypto-cavemen-banner-lines.png';
+
+import Button from '../../components/utility/Button';
+
+import background from '../../assets/img/crypto-cavemen-banner-lines.png';
 
 const Home = () => {
   return (
@@ -7,30 +10,25 @@ const Home = () => {
       className='home'
       style={{
         backgroundImage: `linear-gradient(to right bottom,
-      rgba(3, 55, 200, 0.4),
-      rgba(0, 0, 0, 0.75)),
+      rgba(0, 0, 95, 0.6),
+      rgba(0, 0, 0, 0.85)),
     url(${background})`
       }}
     >
       <div className='landing'>
         <div className='landing__info'>
           <h1 className='landing__header'>CRYPTO CAVEMEN</h1>
-          <h3 className='landing__text'>Ooga Boogah!</h3>
+          <h3 className='landing__text'>
+            Ooga Boogah! Welcome to da new caveman site! Dis where all Cryptopia
+            activities will be open, sit by da campfire and enjoy some time wit
+            fellow cave dwellers! Dashboard will be where you can see all your
+            caveman NFT&apos;s, Shells, and other fun stuff!
+          </h3>
           <div className='cta__btn'>
-            <a href='#' target='_blank' rel='nonreferrer' className='cta__link'>
-              Purchase now for 0.2 EGLD at special pre-sale price!
-            </a>
+            <Button link='/' text="Gen 2 Cavemen Comin' soon!" />
           </div>
         </div>
       </div>
-      <section className='roadmap'>
-        <i className='fa-solid fa-angle-down fa-10x roadmap__down-arrow'></i>
-        <img
-          src='/img/road-map.png'
-          alt='Crypto Cavemen road map'
-          className='roadmap__image'
-        />
-      </section>
     </div>
   );
 };

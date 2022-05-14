@@ -18,34 +18,23 @@
   position: relative;
 
   &__info {
-    position: absolute;
-    top: 35%;
-    left: 60%;
+    margin-left: 50%;
+    padding-top: 25vh;
     max-width: 35%;
     min-width: 20rem;
-
-    @media (max-width: 1200px) {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 100%;
-    }
-
-    @media (max-width: 600px) {
-      position: absolute;
-      top: 50%;
-      left: 55%;
-      transform: translate(-50%, -50%);
-      width: 75vw;
-    }
   }
 
   &__header {
-    background: linear-gradient(to right bottom, #fdf11e, #ac8d04);
+    background: linear-gradient(to right bottom, #fdf11e, #dfb706);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    font-size: 5rem;
+    font-weight: 600;
+  }
+
+  &__text {
+    padding: 3rem 0;
   }
 
   &__link:link,
