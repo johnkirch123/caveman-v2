@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface IProps {
   address: string;
@@ -12,35 +13,35 @@ const Navlist: React.FC<IProps> = ({ address, logout }) => {
     <ul className='nav__list'>
       <li className='nav__item'>
         {isLoggedIn && (
-          <a href='/dashboard' className='nav__link'>
+          <Link to='/dashboard' className='nav__link'>
             Dashboard
-          </a>
+          </Link>
         )}
       </li>
       <li className='nav__item'>
-        <a href='/cavemen' className='nav__link'>
+        <Link to='/cavemen' className='nav__link'>
           Cavemen
-        </a>
+        </Link>
       </li>
       <li className='nav__item'>
-        <a href='/about' className='nav__link'>
+        <Link to='/about' className='nav__link'>
           About
-        </a>
+        </Link>
       </li>
       <li className='nav__item'>
-        <a href='/roadmap' className='nav__link'>
+        <Link to='/roadmap' className='nav__link'>
           Roadmap
-        </a>
+        </Link>
       </li>
       <li className='nav__item'>
         {isLoggedIn ? (
-          <a href='/' className='nav__link' onClick={logout}>
+          <Link to='/' className='nav__link' onClick={logout}>
             Logout
-          </a>
+          </Link>
         ) : (
-          <a href='/unlock' className='nav__link'>
+          <Link to='/unlock' className='nav__link'>
             Connect
-          </a>
+          </Link>
         )}
       </li>
     </ul>

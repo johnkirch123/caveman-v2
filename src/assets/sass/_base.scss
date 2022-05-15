@@ -8,14 +8,25 @@
   font-size: 1.8rem;
   position: relative;
   text-decoration: none;
+  display: inline-block;
   color: black;
   background-color: rgb(167, 146, 13);
 
   padding: 1rem 2rem;
-  transition: color .3s cubic-bezier(1, 0, 0, 1);
+
+  transition: all .2s ease-in-out;
 
   &:hover {
+    transform: translateY(-2px);
     text-decoration: none;
+    box-shadow: 0 0 5px 5px rgba(200,
+      185,
+      130, 0.2);
+    color: black;
+  }
+
+  &:active {
+    transform: translateY(2px);
   }
 }
 

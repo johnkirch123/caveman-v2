@@ -8,10 +8,9 @@ import Navlist from './Navlist';
 
 const Navbar = () => {
   const { address } = useGetAccountInfo();
-  console.log('address', address);
 
   const handleLogout = () => {
-    logout(`${window.location.origin}/unlock`);
+    logout(`${window.location.origin}`);
   };
 
   const isLoggedIn = Boolean(address);
@@ -20,7 +19,7 @@ const Navbar = () => {
     <header className='header'>
       <div className='logo__box'>
         <Link
-          to={isLoggedIn ? routeNames.dashboard : routeNames.home}
+          to={isLoggedIn ? routeNames.home : routeNames.home}
           className='logo__link'
         >
           <img src={logo} alt='logo' className='logo__image' />
