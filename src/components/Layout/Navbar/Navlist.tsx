@@ -19,8 +19,8 @@ const Navlist: React.FC<IProps> = ({ address, logout }) => {
         )}
       </li>
       <li className='nav__item'>
-        <Link to='/cavemen' className='nav__link'>
-          Cavemen
+        <Link to='/collections' className='nav__link'>
+          Collections
         </Link>
       </li>
       <li className='nav__item'>

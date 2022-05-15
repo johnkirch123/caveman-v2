@@ -1,4 +1,5 @@
 import About from 'pages/About/About';
+import Collections from 'pages/Collections';
 import Roadmap from 'pages/Roadmap';
 import withPageTitle from './components/PageTitle';
 import Cavemen from './pages/Cavemen';
@@ -12,6 +13,7 @@ export const routeNames = {
   transaction: '/transaction',
   cavemen: '/cavemen',
   roadmap: '/roadmap',
+  collections: '/collections',
   about: '/about',
   unlock: '/unlock',
   ledger: '/ledger',
@@ -44,6 +46,11 @@ const routes: Array<any> = [
     path: routeNames.about,
     title: 'About',
     component: About
+  },
+  {
+    path: routeNames.collections,
+    title: 'Collections',
+    component: Collections
   },
   {
     path: routeNames.transaction,
