@@ -18612,7 +18612,7 @@
   },
   {
     "name": "#1245",
-    "edition": 1245,
+    "caveman": 1245,
     "rank": 300,
     "attributes": [
       {
@@ -20290,8 +20290,7 @@
   },
   {
     "name": "#1245",
-    "edition": 1245,
-    "rank": 300,
+    "caveman": 1245,
     "attributes": [
       {
         "rarity-type": "epic"
@@ -20328,8 +20327,7 @@
   },
   {
     "name": "#1212",
-    "edition": 1212,
-    "rank": 401,
+    "caveman": 1212,
     "attributes": [
       {
         "rarity-type": "epic"
@@ -20366,8 +20364,7 @@
   },
   {
     "name": "#826",
-    "edition": 826,
-    "rank": 240,
+    "caveman": 826,
     "attributes": [
       {
         "rarity-type": "epic"
@@ -20404,8 +20401,7 @@
   },
   {
     "name": "#606",
-    "edition": 606,
-    "rank": 1534,
+    "caveman": 606,
     "attributes": [
       {
         "rarity-type": "rare"
@@ -20442,8 +20438,7 @@
   },
   {
     "name": "#5629",
-    "edition": 5629,
-    "rank": 42,
+    "caveman": 5629,
     "attributes": [
       {
         "rarity-type": "legendary"
@@ -20480,8 +20475,7 @@
   },
   {
     "name": "#2977",
-    "edition": 2977,
-    "rank": 89,
+    "caveman": 2977,
     "attributes": [
       {
         "rarity-type": "legendary"
@@ -20518,8 +20512,7 @@
   },
   {
     "name": "#172",
-    "edition": 172,
-    "rank": 6782,
+    "caveman": 172,
     "attributes": [
       {
         "rarity-type": "uncommon"

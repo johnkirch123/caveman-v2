@@ -1,0 +1,106 @@
+.card {
+  perspective: 150rem;
+  position: relative;
+  min-width: 24rem;
+  min-height: 35rem;
+
+  &__side {
+    transition: all .8s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    height: 35rem;
+    overflow: hidden;
+
+    &--front {
+      background-color: #debd04;
+      box-shadow: inset 0 0 5rem 4rem rgba(0, 0, 0, 0.15);
+    }
+
+    &--back {
+      background-color: #debd04;
+      transform: rotateY(180deg);
+
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__number {
+    margin: 5rem 0;
+    text-align: center;
+    min-height: 80rem;
+
+    h3 {
+      font-size: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    p {
+      margin-top: 4rem;
+      font-size: 4rem;
+      margin-bottom: 5rem;
+    }
+
+    span {
+      font-size: 2rem;
+    }
+  }
+
+  &__header {
+    color: black;
+    text-align: center;
+    display: block;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: .2rem;
+    font-size: 2.5rem;
+  }
+
+  &__attribute {
+    height: 100%;
+    padding: 1rem;
+    justify-content: center;
+  }
+
+  &__details {
+    margin: .3rem;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    text-align: center;
+  }
+
+  &__img {
+    width: 100%;
+    border: 3px solid black;
+  }
+
+  &__link {
+    @media (max-width: 750px) {
+      grid-column: 2 / 3;
+      height: min-content;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: black;
+  }
+
+  &__link:hover {
+    cursor: pointer;
+  }
+}

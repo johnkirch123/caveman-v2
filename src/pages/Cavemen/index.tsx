@@ -1,150 +1,94 @@
 import React, { useEffect, useState, useRef } from 'react';
+import Card from '../../components/utility/Card';
+import legacyCavemen from '../../assets/data/web-minted.json';
 
 interface ICavemen {
   name: string;
-  edition: number;
-  rank: number;
-  attributes?: [{ [key: string]: string }];
+  caveman: number;
+  attributes: [
+    {
+      'rarity-type': string;
+    },
+    {
+      'rarity-rank'?: number;
+    },
+    {
+      background?: string;
+    },
+    {
+      body?: string;
+    },
+    {
+      feet?: string;
+    },
+    {
+      clothing?: string;
+    },
+    {
+      hair?: string;
+    },
+    {
+      arms?: string;
+    },
+    {
+      environment?: string;
+    },
+    {
+      head?: string;
+    }
+  ];
+  minted?: boolean;
+}
+[];
+
+interface ICaveman {
+  name: string;
+  caveman: number;
+  attributes: [
+    {
+      'rarity-type': string;
+    },
+    {
+      'rarity-rank'?: undefined;
+    },
+    {
+      background?: undefined;
+    },
+    {
+      body?: undefined;
+    },
+    {
+      feet?: undefined;
+    },
+    {
+      clothing?: undefined;
+    },
+    {
+      hair?: undefined;
+    },
+    {
+      arms?: undefined;
+    },
+    {
+      environment?: undefined;
+    },
+    {
+      head?: undefined;
+    }
+  ];
+  minted?: boolean;
 }
 
-interface ICavemen extends Array<ICavemen> {}
-
-const Cavemen = () => {
-  const [cavemen, setCavemen] = useState([]);
+const Cavemen: React.FC = (): JSX.Element => {
+  const cavemen: any = legacyCavemen;
   const searchRef = useRef<HTMLInputElement>(null);
-  const body: HTMLDivElement | null = document.querySelector('#cavemen__body');
+  const bodyRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const minted = '../../src/data/web-minted.json';
-
-    let result;
-    let cavemen: ICavemen;
-    let div;
-    let side1;
-    let side2;
-    let image;
-    let anchor;
-    const fetchData = async () => {
-      await fetch(minted)
-        .then((response) => response.json())
-        .then((data) => {
-          data.sort((a: any, b: any) => {
-            return (
-              a.attributes[1]['rarity-rank'] - b.attributes[1]['rarity-rank']
-            );
-          });
-
-          setCavemen(data);
-          console.log(data);
-          displayData(cavemen);
-        });
-    };
-    fetchData();
-
-    searchRef.addEventListener('keyup', (e) => {
-      // Get input text
-      const cavemenText: string = (e.target as HTMLInputElement).value;
-
-      if (cavemenText !== '') {
-        result = cavemen.filter((caveman, i) => {
-          const { name } = caveman;
-          const rarityType = caveman.attributes[0]['rarity-type'];
-          const rarityRank = caveman.attributes[1]['rarity-rank'].toString();
-          const background = caveman.attributes[2]['background'];
-          const body = caveman.attributes[3]['body'];
-          const feet = caveman.attributes[4]['feet'];
-          const clothing = caveman.attributes[5]['clothing'];
-          const hair = caveman.attributes[6]['hair'];
-          const arms = caveman.attributes[7]['arms'];
-          const environment = caveman.attributes[8]['environment'];
-          const head = caveman.attributes[9]['head'];
-
-          return (
-            name.indexOf(cavemenText) !== -1 ||
-            rarityRank.indexOf(cavemenText) !== -1 ||
-            rarityType.indexOf(cavemenText) !== -1 ||
-            background.indexOf(cavemenText) !== -1 ||
-            body.indexOf(cavemenText) !== -1 ||
-            feet.indexOf(cavemenText) !== -1 ||
-            clothing.indexOf(cavemenText) !== -1 ||
-            hair.indexOf(cavemenText) !== -1 ||
-            arms.indexOf(cavemenText) !== -1 ||
-            environment.indexOf(cavemenText) !== -1 ||
-            head.indexOf(cavemenText) !== -1
-          );
-        });
-        displayData(result);
-      } else {
-        displayData(cavemen);
-      }
+  const renderCards = (): any => {
+    return cavemen.slice(0, 20).map((caveman: ICaveman) => {
+      return <Card key={caveman.caveman} caveman={caveman} />;
     });
-
-    const displayData = (_data: ICavemen) => {
-      console.log(_data);
-      body.innerHTML = '';
-      for (let i = 0; i < _data.length; i++) {
-        image = document.createElement('img');
-        div = document.createElement('div');
-        side1 = document.createElement('div');
-        side2 = document.createElement('div');
-        anchor = document.createElement('a');
-
-        image.src = `https://caveman-images.s3.us-west-1.amazonaws.com/${_data[i].caveman}.jpg`;
-        image.alt = 'Caveman Image';
-
-        image.classList.add('card__img');
-        div.classList.add('cavemen__item', 'card');
-        anchor.classList.add('card__link');
-        anchor.href = `https://caveman-images.s3.us-west-1.amazonaws.com/${_data[i].caveman}.jpg`;
-        anchor.target = '_blank';
-
-        side1.appendChild(image);
-        side1.appendChild(frontOfCard(_data[i]));
-        side2.appendChild(backOfCard(_data[i]));
-        side1.classList.add('card__side', 'card__side--front');
-        side2.classList.add('card__side', 'card__side--back');
-        div.appendChild(side1);
-        div.appendChild(side2);
-
-        anchor.appendChild(div);
-        bodyRef.append(anchor);
-      }
-    };
-
-    const frontOfCard = (element) => {
-      let div = document.createElement('div');
-      div.classList.add('card__number');
-
-      div.innerHTML += `<h3 class="card__header">Caveman #</h3>
-                        <p class="card__number--num">${JSON.stringify(
-                          element.caveman
-                        )}</p>
-                        <span class="card__number--rank">${JSON.stringify(
-                          element.attributes[1]
-                        )}</span>
-                    `;
-
-      return div;
-    };
-
-    const backOfCard = (element) => {
-      const { attributes } = element;
-
-      let div = document.createElement('div');
-      div.classList.add('card__attribute');
-
-      for (let i = 0; i < attributes.length - 2; i++) {
-        let obj = attributes[i + 2];
-
-        for (const [key, value] of Object.entries(obj)) {
-          div.innerHTML += `<h3 class="card__header">${JSON.stringify(
-            key
-          )}</h3><p class="card__details">${JSON.stringify(value)}</p>`;
-        }
-      }
-      return div;
-    };
-  }, []);
+  };
 
   return (
     <div className='cavemen'>
@@ -154,13 +98,16 @@ const Cavemen = () => {
           <input
             type='text'
             className='search__input'
-            id='search_cavemen'
             ref={searchRef}
+            id='search_cavemen'
+            // ref={searchRef}
             placeholder='Search Cavemen...'
           />
         </form>
       </div>
-      <div className='cavemen__body' ref={bodyRef}></div>
+      <div className='cavemen__body' ref={bodyRef}>
+        {renderCards()}
+      </div>
     </div>
   );
 };

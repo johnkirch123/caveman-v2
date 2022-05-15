@@ -284,9 +284,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 5rem;
+  font-size: 2rem;
   text-align: center;
-  padding: 3vw 10vw;
+  padding: 2vw 5vw;
 }
 .cavemen__header--sub-text {
   font-size: 3rem;
@@ -299,6 +299,7 @@
 .cavemen__body {
   grid-column: 2/3;
   grid-row: 3/4;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 4rem;
@@ -310,8 +311,7 @@
 }
 @media (max-width: 1600px) {
   .cavemen__body {
-    grid-template-columns: repeat(3, min-content);
-    grid-column: 2/3;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
   }
 }
@@ -338,11 +338,12 @@
   color: #000;
   background-color: #fff;
   border: none;
-  padding: 0.7rem 2rem;
+  padding: 0.2rem 1rem;
   border-radius: 100px;
   width: 90%;
   transition: all 0.2s;
   margin-right: -3.25rem;
+  margin-top: 1rem;
 }
 .search__input:focus {
   outline: none;
@@ -357,11 +358,32 @@
   background-color: #000;
 }
 
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+@keyframes leftToRight {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
 .card {
   perspective: 150rem;
   position: relative;
   min-width: 24rem;
-  min-height: 50rem;
+  min-height: 35rem;
 }
 .card__side {
   transition: all 0.8s;
@@ -370,7 +392,7 @@
   left: 0;
   width: 100%;
   backface-visibility: hidden;
-  height: 50rem;
+  height: 35rem;
   overflow: hidden;
 }
 .card__side--front {
@@ -443,28 +465,6 @@
 }
 .card__link:hover {
   cursor: pointer;
-}
-
-@keyframes pulsate {
-  0% {
-    transform: scale(1);
-    box-shadow: none;
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: none;
-  }
-}
-@keyframes leftToRight {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 100%;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
