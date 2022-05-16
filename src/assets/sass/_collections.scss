@@ -1,14 +1,41 @@
 .collections {
-  height: 100vh;
-  background-color: #333;
+  min-height: 100vh;
+  background-color: #222;
   color: white;
   text-align: center;
   padding-top: 15vh;
-
-  &__shells {
+  
+  &__area {
     display: flex;
+    width: 80vw;
+    padding-top: 3rem;
     justify-content: space-around;
-    width: 50%;
+
     margin: 0 auto;
   }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+    &--image {
+      width: 100%;
+    }
+
+    &--link {
+      font-size: 1.6rem;
+      transition: transform .2s ease-in-out;
+
+      &:hover {
+        text-decoration: none;
+        transform: scale(1.1);
+      }
+    }
+
+    &--legacy {
+      grid-column: 2 / 3;
+    }
+  }
+  
 }

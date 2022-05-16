@@ -2,45 +2,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import Card from '../../components/utility/Card';
 import legacyCavemen from '../../assets/data/web-minted.json';
 
-interface ICavemen {
-  name: string;
-  caveman: number;
-  attributes: [
-    {
-      'rarity-type': string;
-    },
-    {
-      'rarity-rank'?: number;
-    },
-    {
-      background?: string;
-    },
-    {
-      body?: string;
-    },
-    {
-      feet?: string;
-    },
-    {
-      clothing?: string;
-    },
-    {
-      hair?: string;
-    },
-    {
-      arms?: string;
-    },
-    {
-      environment?: string;
-    },
-    {
-      head?: string;
-    }
-  ];
-  minted?: boolean;
-}
-[];
-
 interface ICaveman {
   name: string;
   caveman: number;

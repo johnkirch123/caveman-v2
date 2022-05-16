@@ -1,14 +1,48 @@
 .dashboard {
-  height: 100vh;
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding-top: 15vh;
+height: 100%;
+min-height: 100vh;
+background-color: #222;
+color: white;
+text-align: center;
+padding-top: 15vh;
 
-  &__shells {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    margin: 0 auto;
+&__shells {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
+}
+
+&__area {
+  margin: 0 auto;
+  padding: 3rem;
+  width: 90%;
+}
+
+&__collection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+&__card {
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  max-width: 15rem;
+
+  &--image {
+    max-width: 100%;
   }
+
+  &--link {
+    font-size: 1.6rem;
+    transition: transform .2s ease-in-out;
+
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.1);
+    }
+  }
+}
 }

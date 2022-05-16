@@ -4,11 +4,31 @@ import { Link } from 'react-router-dom';
 const Collections = () => {
   return (
     <div className='collections'>
-      <div className='collections__user'>
-        <h1>Welcome to your cavemen collections!</h1>
-        <Link to='/cavemen'>Legacy Cavemen</Link>
+      <h1>Cavemen Collections</h1>
+      <div className='collections__area'>
+        <div className='collections__card collections__card--legacy'>
+          <Link to='/cavemen' className='collections__card--link'>
+            Legacy Cavemen
+            <img
+              src='https://caveman-images.s3.us-west-1.amazonaws.com/7256.jpg'
+              alt='Legacy Caveman Collections'
+              className='collections__card--image'
+            />
+            CAVEMEN-9ab535
+          </Link>
+        </div>
+        <div className='collections__card collections__card--legacy'>
+          <Link to='/cavemen' className='collections__card--link'>
+            Cryptopia SFT&apos;s
+            <img
+              src='https://media.elrond.com/nfts/asset/bafybeiagg4pqrkhc3yybrq32ltgdwkkqvhwexloxhpffmbzygukcaxusra/cryptopia-land.png'
+              alt='Legacy Caveman Collections'
+              className='collections__card--image'
+            />
+            CAVEMEN-1690ca
+          </Link>
+        </div>
       </div>
-      <div className='collections__shells'></div>
     </div>
   );
 };
