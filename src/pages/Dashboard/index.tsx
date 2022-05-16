@@ -4,6 +4,7 @@ import { useGetAccountInfo } from '@elrondnetwork/dapp-core';
 import { tokenBaseURL } from '../../config/api';
 import Card from '../../components/Utility/Card';
 import Exchanges from '../../components/Utility/Exchanges';
+import Loader from 'components/Utility/Loader';
 
 interface ITokens {
   balance: string;
@@ -88,11 +89,11 @@ const Dashboard = () => {
     <div className='dashboard'>
       <div className='dashboard__user'>
         <h1>Welcome to your Cavemen dashboard!</h1>
-        <h4>Address: {address}</h4>
+        <h5>Address: {address}</h5>
       </div>
       <div className='dashboard__shells'>
-        <h5>Shells (SHELLS-c48657) Balance:</h5>
-        <h5>{isLoaded ? addCommas(tokenData?.balance) : 'Loading...'}</h5>
+        <h3>Shells (SHELLS-c48657) Balance:</h3>
+        <h3>{isLoaded ? addCommas(tokenData?.balance) : <Loader />}</h3>
       </div>
       <div className='dashboard__area'>
         <h4>Crypto Cavemen (CAVEMEN-9ab535)</h4>
