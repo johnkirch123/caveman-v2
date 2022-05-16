@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Card from '../../components/utility/Card';
+import Card from '../../components/Utility/Card';
 import legacyCavemen from '../../assets/data/web-minted.json';
 
 interface ICaveman {

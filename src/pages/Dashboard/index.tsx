@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useGetAccountInfo } from '@elrondnetwork/dapp-core';
 
 import { tokenBaseURL } from '../../config/api';
-import Card from '../../components/utility/Card';
+import Card from '../../components/Utility/Card';
+import Exchanges from '../../components/Utility/Exchanges';
 
 interface ITokens {
   balance: string;
@@ -21,6 +22,7 @@ const Dashboard = () => {
   const [tokenData, setTokenData] = useState<ITokens>();
   const [legacyData, setLegacyData] = useState<INFT[]>();
   const [sftData, setSftData] = useState<INFT[]>();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const tokenURL = `${tokenBaseURL}/${address}/tokens?identifier=SHELLS-c48657`;
@@ -50,7 +52,10 @@ const Dashboard = () => {
       }
     })
       .then((res) => res.json())
-      .then((data) => setSftData(data));
+      .then((data) => {
+        setIsLoaded(true);
+        setSftData(data);
+      });
   }, []);
 
   const generateNFTURL = (address: string, collection: string): string => {
@@ -58,7 +63,7 @@ const Dashboard = () => {
   };
 
   const addCommas = (num: string | undefined): string => {
-    if (num === undefined) return 'Loading...';
+    if (num === undefined) return '0';
     const str = num.split('.');
     let elemsToDelete = 8;
     const strArray = str[0].split('');
@@ -68,10 +73,8 @@ const Dashboard = () => {
     return str.join('.');
   };
 
-  console.log('sftData: ', sftData);
-
-  const renderCards = (_data: INFT[]): any => {
-    if (_data === undefined) return null;
+  const renderCards = (_data: INFT[], collection: string): any => {
+    if (_data.length === 0) return <Exchanges collection={collection} />;
     return _data.map((nft: INFT) => {
       return (
         <div key={nft.identifier} className='dashboard__card'>
@@ -84,23 +87,23 @@ const Dashboard = () => {
   return (
     <div className='dashboard'>
       <div className='dashboard__user'>
-        <h1>Welcome to your cavemen dashboard!</h1>
+        <h1>Welcome to your Cavemen dashboard!</h1>
         <h4>Address: {address}</h4>
       </div>
       <div className='dashboard__shells'>
         <h5>Shells (SHELLS-c48657) Balance:</h5>
-        <h5>{addCommas(tokenData?.balance)}</h5>
+        <h5>{isLoaded ? addCommas(tokenData?.balance) : 'Loading...'}</h5>
       </div>
       <div className='dashboard__area'>
         <h4>Crypto Cavemen (CAVEMEN-9ab535)</h4>
         <div className='dashboard__collection'>
-          {legacyData && renderCards(legacyData)}
+          {legacyData && renderCards(legacyData, 'CAVEMEN-9ab535')}
         </div>
       </div>
       <div className='dashboard__area'>
         <h4>Crypto Cavemen (CAVEMEN-1690ca)</h4>
         <div className='dashboard__collection'>
-          {sftData && renderCards(sftData)}
+          {sftData && renderCards(sftData, 'CAVEMEN-1690ca')}
         </div>
       </div>
     </div>

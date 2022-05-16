@@ -1,0 +1,20 @@
+.legacySFT {
+  background-color: #222;
+  height: 100vh;
+  
+  &__container {
+    display: flex;
+
+  }
+  
+  &__box {
+    height: 25rem;
+    width: 20rem;
+
+  }
+
+  &__img {
+    height: 20rem;
+    width: 20rem;
+  }
+}

@@ -18,7 +18,7 @@ const Collections = () => {
           </Link>
         </div>
         <div className='collections__card collections__card--legacy'>
-          <Link to='/cavemen' className='collections__card--link'>
+          <Link to='/legacySFT' className='collections__card--link'>
             Cryptopia SFT&apos;s
             <img
               src='https://media.elrond.com/nfts/asset/bafybeiagg4pqrkhc3yybrq32ltgdwkkqvhwexloxhpffmbzygukcaxusra/cryptopia-land.png'
