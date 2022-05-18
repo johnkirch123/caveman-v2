@@ -2,8 +2,8 @@
   width: 100%;
   max-width: 190rem;
   background-color: #171717;
-    height: 100%;
-  
+  height: 100%;
+
   &__background {
     padding-top: 8rem;
   }
@@ -16,13 +16,13 @@
 
   &__caveman-pic {
     height: 25rem;
-      width: 25rem;
-      margin: 2rem;
-      margin-top: 7rem;
-      margin-left: 5rem;
-      shape-outside: circle();
-      border-radius: 50%;
-      float: left;
+    width: 25rem;
+    margin: 2rem;
+    margin-top: 7rem;
+    margin-left: 5rem;
+    shape-outside: circle();
+    border-radius: 50%;
+    float: left;
   }
 
   &__profile-pic {
@@ -37,15 +37,15 @@
   }
 
   &__cavemen {
-    height: 20rem;
-    width: 20rem;
+    height: 30rem;
+    width: 30rem;
     margin: 1.5rem auto;
   }
 
   &__header {
     font-size: 5rem;
     text-align: center;
-    background: linear-gradient(to right bottom, #FDF11E, #ac8d04);
+    background: linear-gradient(to right bottom, #fdf11e, #ac8d04);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -54,18 +54,18 @@
   &__description {
     padding: 3.5rem;
     font-size: 2rem;
-    letter-spacing: .1rem;
-    color: #FDF11E;
+    letter-spacing: 0.1rem;
+    color: #fdf11e;
   }
 
   &__left {
     float: left;
     shape-outside: circle();
-    margin: 3rem;
   }
-  
+
   &__right {
     float: right;
+    margin-top: 5rem;
     shape-outside: circle();
   }
 }

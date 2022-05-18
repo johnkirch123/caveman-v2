@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useGetAccountInfo } from '@elrondnetwork/dapp-core';
+import Loader from 'components/Utility/Loader';
+import Exchanges from '../../components/Utility/Exchanges';
 
 import { tokenBaseURL } from '../../config/api';
-import Card from '../../components/Utility/Card';
-import Exchanges from '../../components/Utility/Exchanges';
-import Loader from 'components/Utility/Loader';
 
 interface ITokens {
   balance: string;
@@ -59,8 +58,8 @@ const Dashboard = () => {
       });
   }, []);
 
-  const generateNFTURL = (address: string, collection: string): string => {
-    return `${tokenBaseURL}/${address}/nfts?size=75&collections=${collection}`;
+  const generateNFTURL = (userAddress: string, collection: string): string => {
+    return `${tokenBaseURL}/${userAddress}/nfts?size=75&collections=${collection}`;
   };
 
   const addCommas = (num: string | undefined): string => {

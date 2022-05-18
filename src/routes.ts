@@ -3,9 +3,9 @@ import Collections from 'pages/Collections';
 import Roadmap from 'pages/Roadmap';
 import withPageTitle from './components/PageTitle';
 import Cavemen from './pages/Cavemen';
-import LegacySFT from './pages/LegacySFT';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Home';
+import LegacySFT from './pages/LegacySFT';
 import Transaction from './pages/Transaction';
 
 export const routeNames = {

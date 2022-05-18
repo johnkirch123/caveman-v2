@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Card from '../../components/Utility/Card';
+import React, { useRef } from 'react';
 import legacyCavemen from '../../assets/data/web-minted.json';
+import Card from '../../components/Utility/Card';
 
 interface ICaveman {
   name: string;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, CloseButton } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 
 const LegacySFT = () => {
   const [show, setShow] = useState<boolean>(false);
