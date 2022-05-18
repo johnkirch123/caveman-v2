@@ -18611,56 +18611,6 @@
     "minted": true
   },
   {
-    "name": "#1245",
-    "caveman": 1245,
-    "rank": 300,
-    "attributes": [
-      {
-        "rarity-type": "epic"
-      },
-      {
-        "rarity-rank": 300
-      },
-      {
-        "background": "retro-purple (0.15% have this trait)"
-      },
-      {
-        "body": "base (33.83% have this trait)"
-      },
-      {
-        "feet": "boots-blue (2.79% have this trait)"
-      },
-      {
-        "clothing": "sabertooth (15.58% have this trait)"
-      },
-      {
-        "hair": "blonde-mustache-mohawk (0.71% have this trait)"
-      },
-      {
-        "arms": "arms-down-log (7.39% have this trait)"
-      },
-      {
-        "environment": "pterodactyl (0.59% have this trait)"
-      },
-      {
-        "head": "red-wizard-hat (1.92% have this trait)"
-      }
-    ],
-    "rarity": {
-      "total-rarity": 0.6295999999999999,
-      "retro-purple": 0.0015,
-      "base": 0.3383,
-      "boots-blue": 0.0279,
-      "sabertooth": 0.1558,
-      "blonde-mustache-mohawk": 0.0071,
-      "arms-down-log": 0.0739,
-      "pterodactyl": 0.0059,
-      "red-wizard-hat": 0.0192,
-      "rarity-rank": 300,
-      "rarity-type": "epic"
-    }
-  },
-  {
     "name": "#3562",
     "caveman": 3562,
     "attributes": [

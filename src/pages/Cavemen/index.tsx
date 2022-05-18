@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
-import legacyCavemen from '../../assets/data/web-minted.json';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import legacyCavemen from '../../assets/data/legacy-cavemen.json';
 import Card from '../../components/Utility/Card';
 
 interface ICaveman {
@@ -10,61 +12,76 @@ interface ICaveman {
       'rarity-type': string;
     },
     {
-      'rarity-rank'?: undefined;
+      'rarity-rank': string;
     },
     {
-      background?: undefined;
+      background: string;
     },
     {
-      body?: undefined;
+      body: string;
     },
     {
-      feet?: undefined;
+      feet: string;
     },
     {
-      clothing?: undefined;
+      clothing: string;
     },
     {
-      hair?: undefined;
+      hair: string;
     },
     {
-      arms?: undefined;
+      arms: string;
     },
     {
-      environment?: undefined;
+      environment: string;
     },
     {
-      head?: undefined;
+      head: string;
     }
   ];
-  minted?: boolean;
 }
 
 const Cavemen: React.FC = (): JSX.Element => {
-  const cavemen: any = legacyCavemen;
-  const searchRef = useRef<HTMLInputElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+  const [filteredCavemen, setFilteredCavemen] = useState<any>(legacyCavemen);
+
+  useEffect(() => {
+    setFilteredCavemen(
+      legacyCavemen.sort((a, b) => {
+        return (
+          parseInt(a.attributes[1]['rarity-rank']!) -
+          parseInt(b.attributes[1]['rarity-rank']!)
+        );
+      })
+    );
+  }, []);
 
   const renderCards = (): any => {
-    return cavemen.slice(0, 20).map((caveman: ICaveman) => {
+    return filteredCavemen.slice(0, 30).map((caveman: ICaveman) => {
       return <Card key={caveman.caveman} caveman={caveman} />;
     });
+  };
+
+  const onHandleSearch = (searchTerm: string) => {
+    if (searchTerm === '') setFilteredCavemen(legacyCavemen);
+    setFilteredCavemen(
+      legacyCavemen.filter((caveman) =>
+        caveman.name.toLowerCase().includes(searchTerm)
+      )
+    );
   };
 
   return (
     <div className='cavemen'>
       <div className='cavemen__header'>
         Revealed Cavemen listed in order from most to least rare:
-        <form action='#' className='search'>
-          <input
-            type='text'
-            className='search__input'
-            ref={searchRef}
-            id='search_cavemen'
-            // ref={searchRef}
-            placeholder='Search Cavemen...'
-          />
-        </form>
+        <input
+          type='text'
+          className='search__input'
+          id='search_cavemen'
+          placeholder='Search Cavemen...'
+          onChange={(e) => onHandleSearch(e.target.value)}
+        />
       </div>
       <div className='cavemen__body' ref={bodyRef}>
         {renderCards()}

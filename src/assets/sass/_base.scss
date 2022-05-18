@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -14,14 +16,12 @@
 
   padding: 1rem 2rem;
 
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     transform: translateY(-2px);
     text-decoration: none;
-    box-shadow: 0 0 5px 5px rgba(200,
-      185,
-      130, 0.2);
+    box-shadow: 0 0 5px 5px rgba(200, 185, 130, 0.2);
     color: black;
   }
 
@@ -40,7 +40,7 @@
   &__box {
     transform: translateX(-50%);
   }
-  
+
   &__link {
     color: white;
   }

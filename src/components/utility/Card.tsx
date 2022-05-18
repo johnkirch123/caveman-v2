@@ -9,87 +9,74 @@ interface IProps {
         'rarity-type': string;
       },
       {
-        'rarity-rank'?: undefined;
+        'rarity-rank': string;
       },
       {
-        background?: undefined;
+        background: string;
       },
       {
-        body?: undefined;
+        body: string;
       },
       {
-        feet?: undefined;
+        feet: string;
       },
       {
-        clothing?: undefined;
+        clothing: string;
       },
       {
-        hair?: undefined;
+        hair: string;
       },
       {
-        arms?: undefined;
+        arms: string;
       },
       {
-        environment?: undefined;
+        environment: string;
       },
       {
-        head?: undefined;
+        head: string;
       }
     ];
-    minted?: boolean;
   };
 }
 
 const Card = ({ caveman }: IProps) => {
-  // const frontOfCard = () => {
-  //   const div = document.createElement('div');
-  //   div.classList.add('card__number');
-
-  //   div.innerHTML += `<h3 class="card__header">Caveman #</h3>
-  //                       <p class="card__number--num">${JSON.stringify(
-  //                         caveman.caveman
-  //                       )}</p>
-  //                       <span class="card__number--rank">${JSON.stringify(
-  //                         caveman.attributes[1]
-  //                       )}</span>
-  //                   `;
-
-  //   return div;
-  // };
-
-  // const backOfCard = () => {
-  //   const { attributes } = caveman;
-
-  //   const div = document.createElement('div');
-  //   div.classList.add('card__attribute');
-
-  //   for (let i = 0; i < attributes.length - 2; i++) {
-  //     const obj = attributes[i + 2];
-
-  //     for (const [key, value] of Object.entries(obj)) {
-  //       div.innerHTML += `<h3 class="card__header">${JSON.stringify(
-  //         key
-  //       )}</h3><p class="card__details">${JSON.stringify(value)}</p>`;
-  //     }
-  //   }
-  //   return div;
-  // };
-
   return (
-    <div className='cavemen__item card'>
-      <div className='card__side card__side--front'>
+    <div className='cavemen__item Ccard'>
+      <div className='Ccard__side Ccard__side--front'>
         {caveman && (
-          <img
-            src={`https://caveman-images.s3.us-west-1.amazonaws.com/${caveman.caveman}.jpg`}
-            alt={`Legacy Caveman ${caveman.caveman}`}
-            className='card__img'
-          />
+          <>
+            <img
+              src={`https://caveman-images.s3.us-west-1.amazonaws.com/${caveman.caveman}.jpg`}
+              alt={`Legacy Caveman ${caveman.caveman}`}
+              className='Ccard__img'
+            />
+            <h3 className='Ccard__header font-weight-bold'>Caveman #</h3>
+            <h4 className='Ccard__number--num text-center font-weight-bold'>
+              {caveman.caveman}
+            </h4>
+            <p className='Ccard__number--rank'>
+              {JSON.stringify(caveman.attributes[1])}
+            </p>
+          </>
         )}
-        {/* {caveman && frontOfCard()} */}
       </div>
-      {/* <div className='card__side card__side--back'>
-        {caveman && backOfCard()}
-      </div> */}
+      <div className='Ccard__side Ccard__side--back'>
+        <div className='Ccard__attribute'>
+          {caveman &&
+            caveman.attributes.map((attribute, i) => {
+              return (
+                <div key={i}>
+                  <h5 className='Ccard__details--header font-weight-bold'>
+                    {Object.keys(attribute)}
+                  </h5>
+                  <h6 className='Ccard__details font-weight-bold'>
+                    {Object.values(attribute)}
+                  </h6>
+                </div>
+              );
+            })}
+        </div>
+      </div>
     </div>
   );
 };

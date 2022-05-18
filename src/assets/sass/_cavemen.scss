@@ -1,17 +1,15 @@
 .cavemen {
-
   background-color: #171717;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-  max-width: 150rem;
-  min-width: min-content;
 
   display: grid;
   grid-template-columns: 10rem 1fr 10rem;
   grid-template-rows: 10rem min-content min-content;
   justify-content: center;
+  gap: 2rem;
 
-  @media(max-width: 750px) {
+  @media (max-width: 750px) {
     grid-template-columns: 10vw 80vw 10vw;
   }
 
@@ -19,7 +17,7 @@
     padding-top: 10rem;
     grid-row: 2 / 3;
     grid-column: 1 / -1;
-    background: linear-gradient(to right bottom, #FDF11E, #ac8d04);
+    background: linear-gradient(to right bottom, #fdf11e, #ac8d04);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -31,7 +29,7 @@
       font-size: 3rem;
     }
 
-    @media(max-width: 750px) {
+    @media (max-width: 750px) {
       grid-column: 1 / -1;
     }
   }
@@ -39,11 +37,11 @@
   &__body {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
-    width: 100%;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-gap: 4rem;
+    grid-gap: 3rem;
+    width: 100%;
 
     line-height: 0;
     margin-top: 5rem;
@@ -52,21 +50,20 @@
       margin-bottom: 10rem;
     }
 
-    @media(max-width: 1600px) {
+    @media (max-width: 1400px) {
       grid-template-columns: repeat(3, 1fr);
       justify-content: center;
     }
 
-    @media(max-width: 750px) {
+    @media (max-width: 750px) {
       grid-template-columns: none;
       justify-content: center;
-      grid-gap: .5rem;
-
+      grid-gap: 0.5rem;
     }
   }
 
   &__item {
-    box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, .2);
+    box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -91,10 +88,10 @@
     color: #000;
     background-color: #fff;
     border: none;
-    padding: .2rem 1rem;
+    padding: 0.2rem 1rem;
     border-radius: 100px;
     width: 90%;
-    transition: all .2s;
+    transition: all 0.2s;
     margin-right: -3.25rem;
     margin-top: 1rem;
 
@@ -110,7 +107,7 @@
     }
   }
 
-  &__input:focus+&__button {
+  &__input:focus + &__button {
     background-color: #000;
   }
 }
