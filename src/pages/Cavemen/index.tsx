@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import legacyCavemen from '../../assets/data/legacy-cavemen.json';
 import Card from '../../components/Utility/Card';
+import ShowMoreButton from '../../components/Utility/ShowMoreButton';
 
 interface ICaveman {
   name: string;
@@ -45,19 +45,8 @@ const Cavemen: React.FC = (): JSX.Element => {
   const bodyRef = useRef<HTMLDivElement>(null);
   const [filteredCavemen, setFilteredCavemen] = useState<any>(legacyCavemen);
 
-  useEffect(() => {
-    setFilteredCavemen(
-      legacyCavemen.sort((a, b) => {
-        return (
-          parseInt(a.attributes[1]['rarity-rank']!) -
-          parseInt(b.attributes[1]['rarity-rank']!)
-        );
-      })
-    );
-  }, []);
-
   const renderCards = (): any => {
-    return filteredCavemen.slice(0, 30).map((caveman: ICaveman) => {
+    return filteredCavemen?.slice(0, 30).map((caveman: ICaveman) => {
       return <Card key={caveman.caveman} caveman={caveman} />;
     });
   };
@@ -86,6 +75,7 @@ const Cavemen: React.FC = (): JSX.Element => {
       <div className='cavemen__body' ref={bodyRef}>
         {renderCards()}
       </div>
+      <ShowMoreButton />
     </div>
   );
 };

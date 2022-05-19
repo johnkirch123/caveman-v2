@@ -25,6 +25,18 @@
 .button:active {
   transform: translateY(2px);
 }
+.button__show-more {
+  grid-column: 2/3;
+  grid-row: 4/-1;
+  justify-self: center;
+  margin-bottom: 3rem;
+  animation: pulsate 2s infinite;
+}
+.button__show-more > i {
+  color: rgb(218, 193, 32);
+  height: 6rem;
+  width: 6rem;
+}
 
 .footer {
   position: fixed;
@@ -306,7 +318,6 @@
   display: grid;
   grid-template-columns: 10rem 1fr 10rem;
   grid-template-rows: 10rem min-content min-content;
-  justify-content: center;
   gap: 2rem;
 }
 @media (max-width: 750px) {
@@ -337,28 +348,14 @@
 .cavemen__body {
   grid-column: 2/3;
   grid-row: 3/4;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 3rem;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   line-height: 0;
   margin-top: 5rem;
 }
 .cavemen__body:last-child {
   margin-bottom: 10rem;
-}
-@media (max-width: 1400px) {
-  .cavemen__body {
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-  }
-}
-@media (max-width: 750px) {
-  .cavemen__body {
-    grid-template-columns: none;
-    justify-content: center;
-    grid-gap: 0.5rem;
-  }
 }
 .cavemen__item {
   box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
@@ -499,15 +496,10 @@
 .Ccard {
   perspective: 150rem;
   position: relative;
-  min-width: min-content;
-  max-width: 35rem;
-  min-height: 35rem;
+  width: 20rem;
+  height: 30rem;
   background-color: #111;
-}
-@media (min-width: 2000px) {
-  .Ccard {
-    margin-bottom: 15rem;
-  }
+  margin: 2rem;
 }
 .Ccard__side {
   transition: all 0.8s;
@@ -522,10 +514,12 @@
 .Ccard__side--front {
   background-color: #debd04;
   box-shadow: inset 0 0 5rem 4rem rgba(0, 0, 0, 0.15);
+  height: 30rem;
 }
 .Ccard__side--back {
   background-color: #debd04;
   transform: rotateY(180deg);
+  height: 30rem;
   display: flex;
   flex-direction: column;
   padding: 0.3rem;
@@ -544,21 +538,11 @@
   font-size: 2rem;
   margin: 1rem auto;
 }
-@media (min-width: 1600px) {
-  .Ccard__number--num {
-    font-size: 2.5em;
-  }
-}
 .Ccard__number--rank {
   font-size: 1rem;
   margin: 2rem auto;
   margin-bottom: 3rem;
   text-align: center !important;
-}
-@media (min-width: 1600px) {
-  .Ccard__number--rank {
-    font-size: 1.5em;
-  }
 }
 .Ccard__header {
   color: black;
@@ -566,11 +550,6 @@
   display: block;
   margin-top: 1rem;
   font-size: 1.5rem;
-}
-@media (min-width: 1600px) {
-  .Ccard__header {
-    font-size: 2.2em;
-  }
 }
 .Ccard__attribute {
   height: 100%;
@@ -582,11 +561,6 @@
   text-align: center;
   margin-bottom: 0.2rem;
 }
-@media (min-width: 1600px) {
-  .Ccard__details {
-    font-size: 1.2em;
-  }
-}
 .Ccard__details--header {
   color: black;
   text-align: center;
@@ -595,14 +569,9 @@
   margin-top: 0.3rem;
   margin-bottom: 0rem;
 }
-@media (min-width: 1600px) {
-  .Ccard__details--header {
-    font-size: 1.3em;
-  }
-}
 .Ccard__img {
   width: 100%;
-  border: 3px solid black;
+  border-bottom: 2px solid black;
 }
 @media (max-width: 750px) {
   .Ccard__link {
