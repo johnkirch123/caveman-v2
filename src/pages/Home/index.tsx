@@ -1,6 +1,6 @@
 import * as React from 'react';
-import background from '../../assets/img/hero-banner.png';
-import Button from '../../components/Utility/Button';
+import background from 'assets/img/hero-banner.png';
+import Button from 'components/Utility/Button';
 
 const Home = () => {
   return (

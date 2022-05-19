@@ -1,8 +1,8 @@
 import * as React from 'react';
-import asset1 from '../../assets/img/Asset 1.png';
-import asset2 from '../../assets/img/Asset 2.png';
-import profileImg from '../../assets/img/caveman-profile.png';
-import johnImg from '../../assets/img/john.png';
+import asset1 from 'assets/img/Asset 1.png';
+import asset2 from 'assets/img/Asset 2.png';
+import profileImg from 'assets/img/caveman-profile.png';
+import johnImg from 'assets/img/john.png';
 
 const About = () => {
   return (
