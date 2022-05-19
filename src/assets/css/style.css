@@ -32,10 +32,11 @@
   margin-bottom: 3rem;
   animation: pulsate 2s infinite;
 }
-.button__show-more > i {
+.button__show-more:hover {
+  cursor: pointer;
+}
+.button__show-more > svg {
   color: rgb(218, 193, 32);
-  height: 6rem;
-  width: 6rem;
 }
 
 .footer {

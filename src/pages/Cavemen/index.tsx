@@ -44,11 +44,14 @@ interface ICaveman {
 const Cavemen: React.FC = (): JSX.Element => {
   const bodyRef = useRef<HTMLDivElement>(null);
   const [filteredCavemen, setFilteredCavemen] = useState<any>(legacyCavemen);
+  const [cavemenShowing, setCavemenShowing] = useState<number>(30);
 
   const renderCards = (): any => {
-    return filteredCavemen?.slice(0, 30).map((caveman: ICaveman) => {
-      return <Card key={caveman.caveman} caveman={caveman} />;
-    });
+    return filteredCavemen
+      ?.slice(0, cavemenShowing)
+      .map((caveman: ICaveman) => {
+        return <Card key={caveman.caveman} caveman={caveman} />;
+      });
   };
 
   const onHandleSearch = (searchTerm: string) => {
@@ -58,6 +61,11 @@ const Cavemen: React.FC = (): JSX.Element => {
         caveman.name.toLowerCase().includes(searchTerm)
       )
     );
+  };
+
+  const showMore = () => {
+    const currentlyShowing = cavemenShowing;
+    setCavemenShowing(currentlyShowing + 30);
   };
 
   return (
@@ -75,7 +83,7 @@ const Cavemen: React.FC = (): JSX.Element => {
       <div className='cavemen__body' ref={bodyRef}>
         {renderCards()}
       </div>
-      <ShowMoreButton />
+      {cavemenShowing < 555 && <ShowMoreButton showMore={showMore} />}
     </div>
   );
 };
