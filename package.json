@@ -16,7 +16,6 @@
     "bootstrap": "4.6.0",
     "comma-number": "^2.1.0",
     "font-awesome": "^4.7.0",
-    "i": "^0.3.7",
     "moment": "2.29.1",
     "npm": "^8.10.0",
     "react": "17.0.2",

@@ -17,7 +17,7 @@ interface INFT {
   url: string;
 }
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
   const { address } = useGetAccountInfo();
   const [tokenData, setTokenData] = useState<ITokens>();
   const [legacyData, setLegacyData] = useState<INFT[]>();
