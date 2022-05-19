@@ -3,7 +3,7 @@ import { useGetAccountInfo } from '@elrondnetwork/dapp-core';
 import Loader from './src/components/Utility/Loader';
 import Exchanges from './src/components/Utility/Exchanges';
 
-import { tokenBaseURL } from './src/config/api';
+import { tokenBaseURL } from 'config/api';
 
 interface ITokens {
   balance: string;
