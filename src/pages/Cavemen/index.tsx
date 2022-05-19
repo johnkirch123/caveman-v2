@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { useState } from 'react';
-import legacyCavemen from 'assets/data/legacy-cavemen.json';
-import Card from 'components/Utility/Card';
-import ShowMoreButton from 'components/Utility/ShowMoreButton';
+import legacyCavemen from './src/assets/data/legacy-cavemen.json';
+import Card from './src/components/Utility/Card';
+import ShowMoreButton from './src/components/Utility/ShowMoreButton';
 
 interface ICaveman {
   name: string;
