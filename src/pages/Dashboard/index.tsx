@@ -4,6 +4,7 @@ import Loader from '../../components/Utility/Loader';
 import Exchanges from '../../components/Utility/Exchanges';
 
 import { tokenBaseURL } from '../../config/api';
+import Collections from '../../components/Utility/Collections';
 
 interface ITokens {
   balance: string;
@@ -86,26 +87,29 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className='dashboard'>
-      <div className='dashboard__user'>
-        <h1>Welcome to your Cavemen dashboard!</h1>
-        <h5>Address: {address}</h5>
-      </div>
-      <div className='dashboard__shells'>
-        <h3>Shells (SHELLS-c48657) Balance:</h3>
-        <h3>{isLoaded ? addCommas(tokenData?.balance) : <Loader />}</h3>
-      </div>
-      <div className='dashboard__area'>
-        <h4>Crypto Cavemen (CAVEMEN-9ab535)</h4>
-        <div className='dashboard__collection'>
-          {legacyData && renderCards(legacyData, 'CAVEMEN-9ab535')}
+      <div className='dashboard__cavemen'>
+        <div className='dashboard__user'>
+          <h1>Welcome to your Cavemen dashboard!</h1>
+          <h5>Address: {address}</h5>
+        </div>
+        <div className='dashboard__shells'>
+          <h3>Shells (SHELLS-c48657) Balance:</h3>
+          <h3>{isLoaded ? addCommas(tokenData?.balance) : <Loader />}</h3>
+        </div>
+        <div className='dashboard__area'>
+          <h4>Crypto Cavemen (CAVEMEN-9ab535)</h4>
+          <div className='dashboard__collection'>
+            {legacyData && renderCards(legacyData, 'CAVEMEN-9ab535')}
+          </div>
+        </div>
+        <div className='dashboard__area'>
+          <h4>Crypto Cavemen (CAVEMEN-1690ca)</h4>
+          <div className='dashboard__collection'>
+            {sftData && renderCards(sftData, 'CAVEMEN-1690ca')}
+          </div>
         </div>
       </div>
-      <div className='dashboard__area'>
-        <h4>Crypto Cavemen (CAVEMEN-1690ca)</h4>
-        <div className='dashboard__collection'>
-          {sftData && renderCards(sftData, 'CAVEMEN-1690ca')}
-        </div>
-      </div>
+      <Collections />
     </div>
   );
 };

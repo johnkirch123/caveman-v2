@@ -6,6 +6,12 @@ import PageNotFound from 'pages/PageNotFound';
 import { routeNames } from 'routes';
 import routes from 'routes';
 import './assets/css/style.css';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  useQuery
+} from '@apollo/client';
 // import '@elrondnetwork/dapp-core/build/index.css';
 
 const environment = 'devnet';
@@ -18,33 +24,40 @@ const {
 } = DappUI;
 
 const App = () => {
+  const client = new ApolloClient({
+    uri: 'https://gateway.deadrare.io/graphql',
+    cache: new InMemoryCache()
+  });
+
   return (
     <Router>
-      <DappProvider
-        environment={environment}
-        customNetworkConfig={{ name: 'customConfig', apiTimeout: 6000 }}
-        completedTransactionsDelay={200}
-      >
-        <Layout>
-          <TransactionsToastList />
-          <NotificationModal />
-          <SignTransactionsModals className='custom-class-for-modals' />
-          <Routes>
-            <Route
-              path={routeNames.unlock}
-              element={<UnlockPage loginRoute={routeNames.dashboard} />}
-            />
-            {routes.map((route: any, index: number) => (
+      <ApolloProvider client={client}>
+        <DappProvider
+          environment={environment}
+          customNetworkConfig={{ name: 'customConfig', apiTimeout: 6000 }}
+          completedTransactionsDelay={200}
+        >
+          <Layout>
+            <TransactionsToastList />
+            <NotificationModal />
+            <SignTransactionsModals className='custom-class-for-modals' />
+            <Routes>
               <Route
-                path={route.path}
-                key={'route-key-' + index}
-                element={<route.component />}
+                path={routeNames.unlock}
+                element={<UnlockPage loginRoute={routeNames.dashboard} />}
               />
-            ))}
-            <Route path='*' element={<PageNotFound />} />
-          </Routes>
-        </Layout>
-      </DappProvider>
+              {routes.map((route: any, index: number) => (
+                <Route
+                  path={route.path}
+                  key={'route-key-' + index}
+                  element={<route.component />}
+                />
+              ))}
+              <Route path='*' element={<PageNotFound />} />
+            </Routes>
+          </Layout>
+        </DappProvider>
+      </ApolloProvider>
     </Router>
   );
 };
